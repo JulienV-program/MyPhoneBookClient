@@ -1,0 +1,60 @@
+<p>works</p>
+<div>
+  {{editContact.firstName}} {{editContact.lastName}}
+</div>
+
+<form #editForm (ngSubmit)="editForm.checkValidity() && handleForm()" *ngIf="contact !== null">
+  <div>
+    <label for="firstName">
+      firstName
+    </label>
+
+    <input type="text" id="firstName"
+           name="firstName"
+           minlength="3"
+           [(ngModel)]="editContact.firstName"
+    >
+  </div>
+  <div>
+    <label for="lastName">
+      lastName
+    </label>
+
+    <input type="text" id="lastName"
+           name="lastName"
+           minlength="3"
+           [(ngModel)]="editContact.lastName"
+    >
+  </div>
+
+  <div *ngFor="let item of this.contactService.phoneList">
+    <label for="{{item.type}} Number">
+      {{item.type}} Number
+    </label>
+
+    <input type="text" id="{{item.type}} Number"
+           name="{{item.type}} Number"
+           minlength="3"
+           [(ngModel)]="item.number"
+    >
+  </div>
+
+  <button type="submit">
+    Save
+  </button>
+</form>
+
+
+  <label for="type">Type</label>
+  <input #type id="type" type="text" name="type">
+  <label for="number">Number</label>
+  <input #number id="number" type="text" name="number">
+  <button type="button" (click)="addnumber(number.value, type.value)">
+    Add
+  </button>
+
+
+
+<button type="button" [routerLink]="['']">
+  back to list
+</button>
