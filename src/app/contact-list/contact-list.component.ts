@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiContactService} from "../services/api-contact.service";
+import {Person} from "../entity/person";
 
 @Component({
   selector: 'app-contact-list',
@@ -11,16 +12,11 @@ export class ContactListComponent implements OnInit {
   constructor(public contactService: ApiContactService) { }
 
   ngOnInit() {
-    // for (let item of this.contactService.contactList) {
-    //   if (item.phones.length > 0){
-    //     for (let elem of item.phones){
-    //       this.contactService.getPhone(elem.number)
-    //     }
-    //   }
-    //
-    // }
-    // console.log(this.contactService.phoneList);
 
   }
 
+  addContact(firstName, lastName){
+    const contact = new Person(firstName, lastName);
+    this.contactService.addPerson(contact);
+  }
 }

@@ -12,5 +12,7 @@ export class Person {
   constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
+    this.notes = '';
+    this.birthAt = new Date()
   }
 }

@@ -18,6 +18,7 @@ export class NumberListComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
+
       this.contact = this.contactService.contactList[params.index];
       Object.assign(this.editContact, this.contact);
     });

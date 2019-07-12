@@ -3,6 +3,7 @@
   {{editContact.firstName}} {{editContact.lastName}}
 </div>
 
+
 <form #editForm (ngSubmit)="editForm.checkValidity() && handleForm()" *ngIf="contact !== null">
   <div>
     <label for="firstName">
