@@ -58,4 +58,16 @@ export class ApiContactService {
       console.log('contact added');
     })
   }
+
+  deletePerson(id): void {
+    this.httpClient.delete('http://127.0.0.1:8000/people/' + id).subscribe(() => {
+      console.log('contact deleted');
+    })
+  }
+
+  deletePhone(id): void {
+    this.httpClient.delete('http://127.0.0.1:8000/phones/' + id).subscribe(() => {
+      console.log('phone deleted');
+    })
+  }
 }

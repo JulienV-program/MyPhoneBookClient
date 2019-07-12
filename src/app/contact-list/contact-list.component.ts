@@ -19,4 +19,9 @@ export class ContactListComponent implements OnInit {
     const contact = new Person(firstName, lastName);
     this.contactService.addPerson(contact);
   }
+
+  delete(id){
+    this.contactService.deletePerson(id);
+  }
+
 }

@@ -32,7 +32,13 @@ export class NumberListComponent implements OnInit {
 
   addnumber(number, type) {
     const newphone = new Phone(number, 'people/' + this.contact.id, type);
+    this.contactService.phoneList.push(newphone);
     this.contactService.addPhone(newphone);
     console.log(newphone);
+  }
+
+  delete(id, index){
+    this.contactService.phoneList.splice(index, 1);
+    this.contactService.deletePhone(id);
   }
 }

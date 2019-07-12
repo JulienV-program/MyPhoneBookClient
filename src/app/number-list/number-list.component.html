@@ -41,15 +41,10 @@
   </div>
 
   <div *ngFor="let item of this.contactService.phoneList">
-    <label for="{{item.type}} Number">
-      {{item.type}} Number
-    </label>
-
-    <input type="text" id="{{item.type}} Number"
-           name="{{item.type}} Number"
-           minlength="3"
-           [(ngModel)]="item.number"
-    >
+    <div>
+      {{ item.type }} {{ item.number  }}
+    </div>
+    <button type="button" (click)="delete(item.id, this.contactService.phoneList.indexOf(item))">Delete</button>
   </div>
 
   <button type="submit">
