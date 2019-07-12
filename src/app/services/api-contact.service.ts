@@ -47,4 +47,10 @@ export class ApiContactService {
     })
   }
 
+  updatePerson(contact: Person): void {
+    this.httpClient.put('http://127.0.0.1:8000/people/' + contact.id, contact).subscribe(() => {
+      console.log('contact updated')
+    })
+  }
+
 }

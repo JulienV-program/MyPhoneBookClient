@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiContactService} from "../services/api-contact.service";
 import {Phone} from "../entity/phone";
@@ -26,7 +26,7 @@ export class NumberListComponent implements OnInit {
 
   handleForm() {
     Object.assign(this.contact, this.editContact);
-    // this.contactService.update(this.contact);
+    this.contactService.updatePerson(this.contact);
   }
 
   addnumber(number, type) {

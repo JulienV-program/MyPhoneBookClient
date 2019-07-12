@@ -27,6 +27,18 @@
     >
   </div>
 
+  <div>
+    <label for="notes">
+      notes
+    </label>
+
+    <textarea  id="notes"
+           name="notes"
+           minlength="3"
+           [(ngModel)]="editContact.notes"
+    ></textarea>
+  </div>
+
   <div *ngFor="let item of this.contactService.phoneList">
     <label for="{{item.type}} Number">
       {{item.type}} Number
